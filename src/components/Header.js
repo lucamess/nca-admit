@@ -23,7 +23,7 @@ const Header = () => {
 			<img src="https://newaychallenge.com/images/logo.jpg" />
 			<FlexGrow />
 			{isMobile ? <HamburgerIcon onClick={() => setOpen(toggle)} /> : null}
-			{isMobile == false || open && <Links>
+			{(isMobile == false || open) && <Links>
 				{links.map(([ label, href ]) =>
 					<Link key={label} href={href}>{label}</Link>)}
 			</Links>}

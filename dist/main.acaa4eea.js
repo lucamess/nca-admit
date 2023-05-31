@@ -19938,7 +19938,7 @@ const Header = () => {
     src: "https://newaychallenge.com/images/logo.jpg"
   }), /*#__PURE__*/_react.default.createElement(_comp.FlexGrow, null), isMobile ? /*#__PURE__*/_react.default.createElement(_Hamburger.default, {
     onClick: () => setOpen(_utils.toggle)
-  }) : null, isMobile == false || open && /*#__PURE__*/_react.default.createElement(Links, null, links.map(([label, href]) => /*#__PURE__*/_react.default.createElement(Link, {
+  }) : null, (isMobile == false || open) && /*#__PURE__*/_react.default.createElement(Links, null, links.map(([label, href]) => /*#__PURE__*/_react.default.createElement(Link, {
     key: label,
     href: href
   }, label))));
@@ -27509,4 +27509,4 @@ const container = document.getElementById("app");
 const root = (0, _client.createRoot)(container);
 root.render( /*#__PURE__*/_react.default.createElement(_App.default, null));
 },{"react":"n8MK","react-dom/client":"NdAl","./App":"lY9v"}]},{},["epB2"], null)
-//# sourceMappingURL=/main.9ab37b4a.js.map
+//# sourceMappingURL=/main.acaa4eea.js.map
