@@ -27135,7 +27135,9 @@ exports.fetchStudents = fetchStudents;
 const sendRequest = (url, obj = {}) => {
   const bodyFormData = new FormData();
   Object.keys(obj).forEach(key => {
-    if (obj[key].lastModified) bodyFormData.append(key, obj[key]);else bodyFormData.append(key, JSON.stringify(obj[key]));
+    var _obj$key;
+
+    if ((_obj$key = obj[key]) !== null && _obj$key !== void 0 && _obj$key.lastModified) bodyFormData.append(key, obj[key]);else bodyFormData.append(key, JSON.stringify(obj[key]));
   });
   return (0, _axios.default)({
     method: "post",
@@ -27507,4 +27509,4 @@ const container = document.getElementById("app");
 const root = (0, _client.createRoot)(container);
 root.render( /*#__PURE__*/_react.default.createElement(_App.default, null));
 },{"react":"n8MK","react-dom/client":"NdAl","./App":"lY9v"}]},{},["epB2"], null)
-//# sourceMappingURL=/main.51260b58.js.map
+//# sourceMappingURL=/main.9ab37b4a.js.map

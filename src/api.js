@@ -11,7 +11,7 @@ export const fetchStudents = () => {
 const sendRequest = (url, obj = {}) => {
 	const bodyFormData = new FormData()
 	Object.keys(obj).forEach(key => {
-		if(obj[key].lastModified)
+		if(obj[key]?.lastModified)
 			bodyFormData.append(key, obj[key])
 		else
 			bodyFormData.append(key, JSON.stringify(obj[key]))
