@@ -19828,7 +19828,7 @@ const transcriptsLink = "https://incorporeal-yaw.000webhostapp.com/ncaadmit/tran
 exports.transcriptsLink = transcriptsLink;
 const para200 = "tenetur blanditiis est non accusantium sed id sunt enim enim qui aut ea et eveniet excepturi fugiat omnis dicta illo nihil rerum dolorem et sit est ut accusantium perspiciatis autem in doloremque ut veritatis sequi ab totam magnam voluptatibus saepe repudiandae et nam officia assumenda voluptatum nulla voluptas non voluptatem ea similique quo repellendus rerum a iste necessitatibus quibusdam aut quaerat eum est illum harum recusandae dicta et nisi enim nam officiis consequatur quibusdam fuga aliquid animi fuga accusamus repudiandae et numquam deserunt officia itaque aut suscipit corporis harum accusamus vel accusamus dolore in autem quas aut est ad id officiis tempora illo earum ut optio ut ea qui voluptatem quis soluta tenetur velit vero animi fugiat eligendi ex omnis tempore facere facere temporibus dolores aspernatur doloremque labore vel deserunt eum dolor odio reprehenderit beatae et doloremque rerum ex at ex aliquid inventore sit dolor aperiam hic enim molestiae aut repellendus hic id et dolor nisi ea et et eaque laudantium nesciunt in qui consequuntur sed et rerum qui temporibus id iure voluptate repellat nesciunt magnam voluptatum dignissimos quo maiores aut et numquam dolorem nobis labore reiciendis nam at distinctio sed est dolor ipsa consectetur culpa blanditiis numquam non eos";
 exports.para200 = para200;
-},{}],"RzfG":[function(require,module,exports) {
+},{}],"p046":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19838,17 +19838,107 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const HamburgerIcon = ({
+  onClick,
+  style
+}) => /*#__PURE__*/_react.default.createElement("div", {
+  onClick: onClick,
+  style: {
+    fontSize: "1.5rem",
+    cursor: "pointer",
+    ...style
+  }
+}, "\u2630");
+
+var _default = HamburgerIcon;
+exports.default = _default;
+},{"react":"n8MK"}],"FOZT":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.toggle = exports.useMediaQuery = exports.dateToHuman = exports.sleep = exports.nullFn = void 0;
+
+var _react = require("react");
+
+const nullFn = () => null;
+
+exports.nullFn = nullFn;
+
+const sleep = ms => value => {
+  return new Promise(res => {
+    setTimeout(() => res(value), ms);
+  });
+};
+
+exports.sleep = sleep;
+
+const dateToHuman = dateString => {
+  const date = new Date(dateString);
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  return months[date.getMonth()] + " " + date.getDate();
+};
+
+exports.dateToHuman = dateToHuman;
+
+const useMediaQuery = query => {
+  const [matches, setMatches] = (0, _react.useState)(false);
+  (0, _react.useEffect)(() => {
+    const media = window.matchMedia(query);
+
+    if (media.matches !== matches) {
+      setMatches(media.matches);
+    }
+
+    const listener = () => setMatches(media.matches);
+
+    window.addEventListener("resize", listener);
+    return () => window.removeEventListener("resize", listener);
+  }, [matches, query]);
+  return matches;
+};
+
+exports.useMediaQuery = useMediaQuery;
+
+const toggle = a => !a;
+
+exports.toggle = toggle;
+},{"react":"n8MK"}],"RzfG":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _comp = require("comp");
 
+var _Hamburger = _interopRequireDefault(require("src/icons/Hamburger"));
+
+var _utils = require("src/utils");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
 const Header = () => {
-  const links = [["Home", "https://newaychallenge.com/index.php"], ["About", "https://newaychallenge.com/index.php/about"], ["Services", "https://newaychallenge.com/index.php/services/high-school"], ["Admission", "https://newaychallenge.com/index.php/admissionn/application-process"], ["Employment", "https://newaychallenge.com/index.php/employment"], ["News&Events", "https://newaychallenge.com/index.php/news-events"], ["Resources", "https://newaychallenge.com/index.php/resources"], ["Contact", "https://newaychallenge.com/index.php/contact-us"]];
+  const links = [["Home", "https://newaychallenge.com/index.php"], ["About", "https://newaychallenge.com/index.php/about"], ["Services", "https://newaychallenge.com/index.php/services/high-school"], ["Admin", "/#/admin"], ["Employment", "https://newaychallenge.com/index.php/employment"], ["News&Events", "https://newaychallenge.com/index.php/news-events"], ["Resources", "https://newaychallenge.com/index.php/resources"], ["Contact", "https://newaychallenge.com/index.php/contact-us"]];
+  const isMobile = (0, _utils.useMediaQuery)("(max-width: 64em)");
+  const [open, setOpen] = (0, _react.useState)(false);
   return /*#__PURE__*/_react.default.createElement(Container, null, /*#__PURE__*/_react.default.createElement("img", {
     src: "https://newaychallenge.com/images/logo.jpg"
-  }), /*#__PURE__*/_react.default.createElement(_comp.FlexGrow, null), /*#__PURE__*/_react.default.createElement(Links, null, links.map(([label, href]) => /*#__PURE__*/_react.default.createElement(Link, {
+  }), /*#__PURE__*/_react.default.createElement(_comp.FlexGrow, null), isMobile ? /*#__PURE__*/_react.default.createElement(_Hamburger.default, {
+    onClick: () => setOpen(_utils.toggle)
+  }) : null, isMobile == false || open && /*#__PURE__*/_react.default.createElement(Links, null, links.map(([label, href]) => /*#__PURE__*/_react.default.createElement(Link, {
     key: label,
     href: href
   }, label))));
@@ -19857,12 +19947,18 @@ const Header = () => {
 const Container = _styledComponents.default.div`
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	border-bottom: 2px solid #f5f5f5;
 	box-sizing: border-box;
 	height: 100px;
 	width: 100%;
 	align-items: center;
 	padding: 1rem 4rem;
+
+	@media screen and (max-width: 64rem) {
+		height: min-content;
+		padding: 1rem;
+	}
 `;
 const Link = _styledComponents.default.a`
 	font-size: 1.125em;
@@ -19873,10 +19969,16 @@ const Link = _styledComponents.default.a`
 const Links = _styledComponents.default.div`
 	display: flex;
 	gap: 2rem;
+
+	@media screen and (max-width: 64rem) {
+		flex-direction: column;
+		gap: 1rem;
+		width: 100%;
+	}
 `;
 var _default = Header;
 exports.default = _default;
-},{"react":"n8MK","styled-components":"tFSs","comp":"iA92"}],"rXwc":[function(require,module,exports) {
+},{"react":"n8MK","styled-components":"tFSs","comp":"iA92","src/icons/Hamburger":"p046","src/utils":"FOZT"}],"rXwc":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -20105,6 +20207,12 @@ const Container = _styledComponents.default.div`
 	color: var(--gray);
 	align-items: center;
 	width: min-content;
+
+	@media screen and (max-width: 64rem) {
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
 `;
 const Text = _styledComponents.default.div`
 	margin-bottom: 0.5rem;
@@ -20143,34 +20251,7 @@ const Select = (0, _styledComponents.default)(Input).attrs({
 })`
 `;
 exports.Select = Select;
-},{"styled-components":"tFSs"}],"FOZT":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.dateToHuman = exports.sleep = exports.nullFn = void 0;
-
-const nullFn = () => null;
-
-exports.nullFn = nullFn;
-
-const sleep = ms => value => {
-  return new Promise(res => {
-    setTimeout(() => res(value), ms);
-  });
-};
-
-exports.sleep = sleep;
-
-const dateToHuman = dateString => {
-  const date = new Date(dateString);
-  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  return months[date.getMonth()] + " " + date.getDate();
-};
-
-exports.dateToHuman = dateToHuman;
-},{}],"U3eB":[function(require,module,exports) {
+},{"styled-components":"tFSs"}],"U3eB":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -20445,6 +20526,10 @@ const Footer = _styledComponents.default.div`
 	background: #e9eaf1;
 	padding: 2rem 12rem;
 	color: #7e879a;
+
+	@media screen and (max-width: 64rem) {
+		padding: 2rem;
+	}
 `;
 var _default = Footer;
 exports.default = _default;
@@ -27118,7 +27203,9 @@ const Home = () => {
 
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(Container, null, /*#__PURE__*/_react.default.createElement(_comp.Header, null), /*#__PURE__*/_react.default.createElement(_comp.Space, {
     h: "6rem"
-  }), /*#__PURE__*/_react.default.createElement(Section, null, /*#__PURE__*/_react.default.createElement(Sidebar, null, /*#__PURE__*/_react.default.createElement(_comp.Socials, null)), /*#__PURE__*/_react.default.createElement(Main, null, /*#__PURE__*/_react.default.createElement(Title, null, "Application Process"), /*#__PURE__*/_react.default.createElement(_comp.Space, {
+  }), /*#__PURE__*/_react.default.createElement(Section, null, /*#__PURE__*/_react.default.createElement(Sidebar, null, /*#__PURE__*/_react.default.createElement(_comp.Socials, null), /*#__PURE__*/_react.default.createElement(_comp.Space, {
+    h: "1rem"
+  })), /*#__PURE__*/_react.default.createElement(Main, null, /*#__PURE__*/_react.default.createElement(Title, null, "Application Process"), /*#__PURE__*/_react.default.createElement(_comp.Space, {
     h: "2rem"
   }), /*#__PURE__*/_react.default.createElement(_comp.AdmissionForm, {
     onSubmit: handleSubmit
@@ -27130,6 +27217,11 @@ const Home = () => {
 const Container = _styledComponents.default.div`
 	display: flex;
 	flex-direction: column;
+
+	@media screen and (max-width: 64rem) {
+		width: 100%;
+		padding: 2rem;
+	}
 `;
 const Title = _styledComponents.default.div`
 	color: var(--primary);
@@ -27140,6 +27232,11 @@ const Section = _styledComponents.default.div`
 	display: flex;
 	margin: 0 auto;
 	width: 1000px;
+
+	@media screen and (max-width: 64rem) {
+		width: 100%;
+		flex-direction: column;
+	}
 `;
 const Sidebar = _styledComponents.default.div`
 	width: 20%;
@@ -27289,6 +27386,12 @@ const Admin = () => {
 const Container = _styledComponents.default.div`
 	display: flex;
 	flex-direction: column;
+	max-width: 100%;
+
+	@media screen and (max-width: 64rem) {
+		padding: 1rem;
+		width: 100%;
+	}
 `;
 const Title = _styledComponents.default.div`
 	color: var(--primary);
@@ -27404,4 +27507,4 @@ const container = document.getElementById("app");
 const root = (0, _client.createRoot)(container);
 root.render( /*#__PURE__*/_react.default.createElement(_App.default, null));
 },{"react":"n8MK","react-dom/client":"NdAl","./App":"lY9v"}]},{},["epB2"], null)
-//# sourceMappingURL=/main.221b8f19.js.map
+//# sourceMappingURL=/main.51260b58.js.map

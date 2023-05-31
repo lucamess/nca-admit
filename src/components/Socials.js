@@ -25,6 +25,12 @@ const Container = styled.div`
 	color: var(--gray);
 	align-items: center;
 	width: min-content;
+
+	@media screen and (max-width: 64rem) {
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
 `
 const Text = styled.div`
 	margin-bottom: 0.5rem;

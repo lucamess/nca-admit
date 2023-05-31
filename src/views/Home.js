@@ -27,6 +27,7 @@ const Home = () => {
 			<Section>
 				<Sidebar>
 					<Socials />
+					<Space h="1rem" />
 				</Sidebar>
 				<Main>
 					<Title>Application Process</Title>
@@ -44,6 +45,11 @@ const Home = () => {
 const Container = styled.div`
 	display: flex;
 	flex-direction: column;
+
+	@media screen and (max-width: 64rem) {
+		width: 100%;
+		padding: 2rem;
+	}
 `
 const Title = styled.div`
 	color: var(--primary);
@@ -54,6 +60,11 @@ const Section = styled.div`
 	display: flex;
 	margin: 0 auto;
 	width: 1000px;
+
+	@media screen and (max-width: 64rem) {
+		width: 100%;
+		flex-direction: column;
+	}
 `
 const Sidebar = styled.div`
 	width: 20%;

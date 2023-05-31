@@ -49,6 +49,12 @@ const Admin = () => {
 const Container = styled.div`
 	display: flex;
 	flex-direction: column;
+	max-width: 100%;
+
+	@media screen and (max-width: 64rem) {
+		padding: 1rem;
+		width: 100%;
+	}
 `
 const Title = styled.div`
 	color: var(--primary);
